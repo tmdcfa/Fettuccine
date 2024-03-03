@@ -21,7 +21,7 @@ type Restaurant struct {
 }
 
 type Cuisine struct {
-    Name string `json:"cuisine"`
+    Name string `json:"name"`
 }
 
 func main() {
@@ -46,6 +46,7 @@ func main() {
         fmt.Printf("Address: %s, %s, %s\n", restaurant.Address.FirstLine, restaurant.Address.City, restaurant.Address.PostalCode)
         fmt.Printf("Cuisines: %s\n", restaurant.Cuisines)
         fmt.Printf("Rating: %.2f\n", restaurant.Rating.StarRating)
+		fmt.Println("===================================================================================")
     }
 }
 
