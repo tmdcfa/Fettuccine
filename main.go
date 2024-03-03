@@ -5,6 +5,7 @@ import (
     "fmt"
     "log"
     "net/http"
+	"strings"
 )
 
 type Restaurant struct {
@@ -44,7 +45,7 @@ func main() {
         fmt.Printf("Restaurant %d:\n", i+1)
         fmt.Printf("Name: %s\n", restaurant.Name)
         fmt.Printf("Address: %s, %s, %s\n", restaurant.Address.FirstLine, restaurant.Address.City, restaurant.Address.PostalCode)
-        fmt.Printf("Cuisines: %s\n", restaurant.Cuisines)
+		fmt.Printf("Cuisines: %s\n", formatCuisines(restaurant.Cuisines))
         fmt.Printf("Rating: %.2f\n", restaurant.Rating.StarRating)
 		fmt.Println("===================================================================================")
     }
@@ -69,4 +70,12 @@ func getRestaurantByPostalCode(postalCode string) ([]Restaurant, error) {
 
     return data.Restaurants, nil
 
+}
+
+func formatCuisines(cuisines []Cuisine) string {
+    var cuisineNames []string 
+    for _, cuisine := range cuisines {
+        cuisineNames = append(cuisineNames, cuisine.Name)
+    }
+    return strings.Join(cuisineNames, ", ")
 }
