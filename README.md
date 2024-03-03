@@ -21,7 +21,7 @@ This Command-Line Interface (CLI) application fetches restaurant data based on a
 
 #
 ## Assumptions and Clarifications
-- The application is designed to be interactive, prompting users to input a postcode for targeted restaurant information    retrieval.
+- The application is designed to be interactive, prompting users to input a postcode for targeted restaurant information retrieval.
 - To prevent overwhelming the console, only data for the first 10 restaurants is displayed.
 - Cuisine information is formatted as a comma-separated string to enhance readability.
 
